@@ -61,8 +61,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         Employee employee = getEmployeeById(id);
        employee.setName(employeeDTO.getName());
        employee.setSurname(employeeDTO.getSurname());
-       employee.setAge(employee.getAge());
-       employee.setSalary(employee.getSalary());
+       employee.setAge(employeeDTO.getAge());
+       employee.setSalary(employeeDTO.getSalary());
         employeeRepository.save(employee);
     }
 
@@ -70,16 +70,16 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void updateSome(EmployeeDTO employeeDTO, long id) {
         Employee employee = getEmployeeById(id);
         if (employeeDTO.getName()!=null)
-        employee.setName(employee.getName());
+        employee.setName(employeeDTO.getName());
 
         if (employeeDTO.getSurname()!=null)
-        employee.setSurname(employee.getSurname());
+        employee.setSurname(employeeDTO.getSurname());
 
         if (employeeDTO.getAge()>0)
-        employee.setAge(employee.getAge());
+        employee.setAge(employeeDTO.getAge());
 
         if (employeeDTO.getSalary()>0)
-        employee.setSalary(employee.getSalary());
+        employee.setSalary(employeeDTO.getSalary());
 
         employeeRepository.save(employee);
     }
